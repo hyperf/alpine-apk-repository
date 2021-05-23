@@ -17,8 +17,8 @@ ADD http://alpine-apk-test.knowyourself.cc/php-alpine.rsa.pub /etc/apk/keys/php-
 ##
 RUN set -ex \
     # change apk source repo
-    && echo "https://raw.githubusercontent.com/hyperf/alpine-apk-repository/main/v3.11/php-7.4" >> /etc/apk/repositories \
-    && echo "@php https://raw.githubusercontent.com/hyperf/alpine-apk-repository/main/v3.11/php-7.4" >> /etc/apk/repositories \
+    && echo "http://alpine-apk-test.knowyourself.cc/v3.11/php-7.4" >> /etc/apk/repositories \
+    && echo "@php http://alpine-apk-test.knowyourself.cc/v3.11/php-7.4" >> /etc/apk/repositories \
     && apk update \
     && apk add --no-cache \
     # Install base packages ('ca-certificates' will install 'nghttp2-libs')
